@@ -2,13 +2,13 @@ import pygame
 import time
 import random
 pygame.init()
-display_width=600
-display_height=1000
-black=(0,0,0)
-white=(255,255,255)
+display_width=600 #width of the screen display
+display_height=1000 #height of the screen display
+black=(0,0,0) #RGB values are 0 as darkest shades correspond to value 0
+white=(255,255,255) #RGB values are 0 as white shades correspond to value 255
 red=(255,0,0)
 
-carImg=pygame.image.load('game.png')
+carImg=pygame.image.load('game.png') #load the car image
 gameDisplay=pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption('yolo')
 clock=pygame.time.Clock()
@@ -24,7 +24,7 @@ def text_objects(text,font):
     textSurface=font.render(text,True,red)
     return textSurface,textSurface.get_rect()
 
-def message_display(text):
+def message_display(text): #to display the message
     largeText=pygame.font.Font('freesansbold.ttf',115)
     TextSurf,TextRect=text_objects(text,largeText)
     TextRect.center=((display_width/2),(display_height/2))
